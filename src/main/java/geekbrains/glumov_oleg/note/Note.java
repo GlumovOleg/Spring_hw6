@@ -13,6 +13,12 @@ public class Note {
     @Column(nullable = false)
     private String description;
 
+    @Column
+    private String author;
+
+    @ManyToOne
+    @JoinColumn(name = "performer_id")
+
     @Column(nullable = true)
     private String status;
 
@@ -34,6 +40,14 @@ public class Note {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public String getStatus() {
